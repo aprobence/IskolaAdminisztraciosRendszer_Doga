@@ -2,7 +2,7 @@ namespace IskolaAdminisztraciosRendszer_Doga;
 
 internal class Tanar
 {
-    public string Nev { get; private set; }
+    public string Nev { get; set; }
     public List<Tantargy> Tantargy { get; set; }
     public int TanarID { get; set; }
 
@@ -18,11 +18,13 @@ internal class Tanar
         Tantargy.Add(tantargy);
     }
 
-    public void OktatottTantargyak()
+    public string OktatottTantargyak()
     {
-        foreach (var item in Tantargy)
+        string tantargyak = "";
+        foreach (var item in tantargyak)
         {
-            Console.Write(item + " ");
+            tantargyak += item + " ";
         }
+        return tantargyak;
     }
 }

@@ -3,9 +3,9 @@ namespace IskolaAdminisztraciosRendszer_Doga;
 internal class Diak
 {
     //diák attribútumok
-    public static string Nev { get; private set; }
-    public static string Osztaly { get; private set; }
-    public static int Azonosito { get; private set; }
+    public static string Nev { get; set; }
+    public static string Osztaly { get; set; }
+    public static int Azonosito { get; set; }
 
     public Diak(string nev, string osztaly, int azonosito)
     {
