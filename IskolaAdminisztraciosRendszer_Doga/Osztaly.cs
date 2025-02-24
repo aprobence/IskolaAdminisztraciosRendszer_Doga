@@ -1,6 +1,6 @@
 namespace IskolaAdminisztraciosRendszer_Doga;
 
-public class Osztaly
+internal class Osztaly
 {
     
 }
