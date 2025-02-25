@@ -15,7 +15,7 @@ internal class Osztaly
 
     public void HozzaadDiak(Diak diak)
     {
-        if (Diakok.Count() > 25)
+        if (Diakok.Count < 25)
         {
             Diakok.Add(diak);
         }

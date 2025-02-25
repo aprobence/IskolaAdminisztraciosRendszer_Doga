@@ -9,7 +9,7 @@ internal class Tanar
     public Tanar(string nev, List<Tantargy> tantargy, int tanarid)
     {
         Nev = nev;
-        Tantargy = tantargy;
+        Tantargy = new List<Tantargy>();
         TanarID = tanarid;
     }
 
@@ -21,7 +21,7 @@ internal class Tanar
     public string OktatottTantargyak()
     {
         string tantargyak = "";
-        foreach (var item in tantargyak)
+        foreach (var item in Tantargy)
         {
             tantargyak += item + " ";
         }

@@ -26,10 +26,10 @@ class Program
 						Console.WriteLine("Adja meg a diák nevét: ");
 						string nev = Console.ReadLine();
 						Console.WriteLine("Adja meg a diák osztályát: ");
-						string osztaly = Console.ReadLine();
+						string osztalye = Console.ReadLine();
 						Console.WriteLine("Adja meg a diák azonosítóját: ");
 						int azonosito = Convert.ToInt32(Console.ReadLine());
-						Diak diak = new Diak(nev, osztaly, azonosito);
+						Diak diak = new Diak(nev, osztalye, azonosito);
 						Console.WriteLine(diak.TeljesNevKiiras());
 						break;
 					case 2:
@@ -38,7 +38,7 @@ class Program
 						string tanarNev = Console.ReadLine();
 						Console.WriteLine("Adja meg a tantárgy nevét: ");
 						string tantargyNev = Console.ReadLine();
-						Tanar tanar = new Tanar(tanarNev);
+						Tanar tanar = new Tanar(tanarNev, new List<Tantargy>(), 1);
 						Tantargy tantargy = new Tantargy(tantargyNev, 2);
 						tanar.HozzaadTantargy(tantargy);
 						break;
@@ -46,7 +46,7 @@ class Program
 						Console.Clear();
 						Console.WriteLine("Adja meg a tanár nevét: ");
 						string tanarNev2 = Console.ReadLine();
-						Tanar tanar2 = new Tanar(tanarNev2);
+						Tanar tanar2 = new Tanar(tanarNev2, new List<Tantargy>(), 2);
 						Console.WriteLine(tanar2.OktatottTantargyak());
 						break;
 					case 4:
@@ -84,9 +84,9 @@ class Program
 						string osztalyNev = Console.ReadLine();
 						Console.WriteLine("Adja meg az osztályfőnök nevét: ");
 						string osztalyfonokNev = Console.ReadLine();
-						Tanar osztalyfonok = new Tanar(osztalyfonokNev);
-						Osztaly osztaaly = new Osztaly(osztalyNev, osztalyfonok);
-						Console.WriteLine(osztaaly.OsztalyfonokKiirasa());
+						
+						Osztaly osztaly = new Osztaly(osztalyNev, new List<Diak>(), osztalyfonokNev);
+						Console.WriteLine(osztaly.OsztalyfonokKiirasa());
 						break;
 					case 8:
 						Console.Clear();
@@ -105,9 +105,7 @@ class Program
 						fut = false;
 						break;
 					default:
-                        Console.Clear();
                         Console.WriteLine("Rossz számot adtál meg, próbáld újra!");
-						valasztas = Convert.ToInt32(Console.ReadLine());
 						break;
             }
         }
