@@ -13,6 +13,9 @@ namespace IskolaAdminisztraciosRendszer_Doga
 
             Tanar tanarKovacs = new Tanar("Kovács János", new List<Tantargy> { matematika, fizika }, 1);
             Tanar tanarNagy = new Tanar("Nagy Éva", new List<Tantargy> { magyar }, 2);
+            
+            //Tanár tantárgyaihoz hozzáadása
+            tanarKovacs.HozzaadTantargy(magyar);
 
             Diak diak1 = new Diak("Kiss Péter", "10.A", 101);
             Diak diak2 = new Diak("Nagy Anna", "10.A", 102);
@@ -38,6 +41,7 @@ namespace IskolaAdminisztraciosRendszer_Doga
             osztaly10A.HozzaadDiak(diak8);
             osztaly10A.HozzaadDiak(diak9);
             osztaly10A.HozzaadDiak(diak10);
+            Console.WriteLine("");
 
             Ertekeles ertekeles1 = new Ertekeles(diak1, matematika, 5);
             Ertekeles ertekeles2 = new Ertekeles(diak2, fizika, 4);
@@ -60,11 +64,14 @@ namespace IskolaAdminisztraciosRendszer_Doga
             Console.WriteLine(ertekeles8.JegyKiiras());
             Console.WriteLine(ertekeles9.JegyKiiras());
             Console.WriteLine(ertekeles10.JegyKiiras());
+            Console.WriteLine("");
 
             osztaly10A.OsszesDiakListazasa();
+            Console.WriteLine("");
             
             Console.WriteLine(tanarKovacs.OktatottTantargyak());
             Console.WriteLine(tanarNagy.OktatottTantargyak());
+            Console.WriteLine("");
 
             Console.WriteLine(osztaly10A.OsztalyfonokKiirasa());
         }

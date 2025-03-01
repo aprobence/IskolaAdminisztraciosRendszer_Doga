@@ -35,6 +35,6 @@ internal class Osztaly
 
     public string OsztalyfonokKiirasa()
     {
-        return $"Az osztályfőnök neve: {Osztalyfonok}\nAz osztályfőnök tantárgyai: {Osztalyfonok.OktatottTantargyak()}";
+        return Osztalyfonok.OktatottTantargyak();
     }
 }
