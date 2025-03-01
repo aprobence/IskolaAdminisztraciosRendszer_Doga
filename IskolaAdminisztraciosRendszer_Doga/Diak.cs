@@ -13,6 +13,10 @@ internal class Diak
         Osztaly = osztaly;
         Azonosito = azonosito;
     }
+    public override string ToString()
+    {
+        return Nev;
+    }
 
     public string TeljesNevKiiras()
     {

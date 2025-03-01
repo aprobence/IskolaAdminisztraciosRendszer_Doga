@@ -27,14 +27,14 @@ internal class Osztaly
 
     public void OsszesDiakListazasa()
     {
-        foreach (var item in Diakok)
+        foreach (var diak in Diakok)
         {
-            Console.Write(item + " ");
+            Console.WriteLine(diak.TeljesNevKiiras());
         }
     }
 
     public string OsztalyfonokKiirasa()
     {
-        return $"Az osztályfőnök neve: {Osztalyfonok} Az osztályfőnök tantárgyai: {Osztalyfonok.OktatottTantargyak()}";
+        return $"Az osztályfőnök neve: {Osztalyfonok}\nAz osztályfőnök tantárgyai: {Osztalyfonok.OktatottTantargyak()}";
     }
 }

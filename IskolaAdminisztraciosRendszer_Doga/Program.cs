@@ -1,113 +1,72 @@
-﻿namespace IskolaAdminisztraciosRendszer_Doga;
+﻿using System;
+using System.Collections.Generic;
 
-class Program
+namespace IskolaAdminisztraciosRendszer_Doga
 {
-    static void Main(string[] args)
+    class Program
     {
-        bool fut = true;
-        while (fut=true)
+        static void Main(string[] args)
         {
-            Console.WriteLine("1. Diák nevének és osztályának kiírása");
-            Console.WriteLine("2. Tantárgy hozzáadása a tanár listájához");
-            Console.WriteLine("3. A tanár által oktatott tantárgyak kiírása");
-            Console.WriteLine("4. A tantárgy neve és heti óraszám megtekintése");
-            Console.WriteLine("5. Diák hozzáadása a listához");
-            Console.WriteLine("6. Diákok megtekintése");
-            Console.WriteLine("7. Az osztályfőnök neve és tantárgya megtekintése");
-            Console.WriteLine("8. Jegy kiírása");
-            Console.WriteLine("9. Kilépés");
-            Console.WriteLine("Válasszon menüpontot: ");
-            int valasztas = Convert.ToInt32(Console.ReadLine());
+            Tantargy matematika = new Tantargy("Matematika", 4);
+            Tantargy fizika = new Tantargy("Fizika", 3);
+            Tantargy magyar = new Tantargy("Magyar", 5);
 
-            switch (valasztas)
-            {
-                case 1:
-						Console.Clear();
-						Console.WriteLine("Adja meg a diák nevét: ");
-						string nev = Console.ReadLine();
-						Console.WriteLine("Adja meg a diák osztályát: ");
-						string osztalye = Console.ReadLine();
-						Console.WriteLine("Adja meg a diák azonosítóját: ");
-						int azonosito = Convert.ToInt32(Console.ReadLine());
-						Diak diak = new Diak(nev, osztalye, azonosito);
-						Console.WriteLine(diak.TeljesNevKiiras());
-						break;
-					case 2:
-						Console.Clear();
-						Console.WriteLine("Adja meg a tanár nevét: ");
-						string tanarNev = Console.ReadLine();
-						Console.WriteLine("Adja meg a tantárgy nevét: ");
-						string tantargyNev = Console.ReadLine();
-						Tanar tanar = new Tanar(tanarNev, new List<Tantargy>(), 1);
-						Tantargy tantargy = new Tantargy(tantargyNev, 2);
-						tanar.HozzaadTantargy(tantargy);
-						break;
-					case 3:
-						Console.Clear();
-						Console.WriteLine("Adja meg a tanár nevét: ");
-						string tanarNev2 = Console.ReadLine();
-						Tanar tanar2 = new Tanar(tanarNev2, new List<Tantargy>(), 2);
-						Console.WriteLine(tanar2.OktatottTantargyak());
-						break;
-					case 4:
-						Console.Clear();
-						Console.WriteLine("Adja meg a tantárgy nevét: ");
-						string tantargyNev2 = Console.ReadLine();
-						Tantargy tantargy2 = new Tantargy(tantargyNev2, 2);
-						Console.WriteLine(tantargy2.TantargyAdatok());
-						break;
-					case 5:
-						Console.Clear();
-						Console.WriteLine("Adja meg a diák nevét: ");
-						string nev2 = Console.ReadLine();
-						Console.WriteLine("Adja meg a diák osztályát: ");
-						string osztaly2 = Console.ReadLine();
-						Console.WriteLine("Adja meg a diák azonosítóját: ");
-						int azonosito2 = Convert.ToInt32(Console.ReadLine());
-						Diak diak2 = new Diak(nev2, osztaly2, azonosito2);
-						Console.WriteLine(diak2.TeljesNevKiiras());
-						break;
-					case 6:
-						Console.Clear();
-						Console.WriteLine("Adja meg a diák nevét: ");
-						string nev3 = Console.ReadLine();
-						Console.WriteLine("Adja meg a diák osztályát: ");
-						string osztaly3 = Console.ReadLine();
-						Console.WriteLine("Adja meg a diák azonosítóját: ");
-						int azonosito3 = Convert.ToInt32(Console.ReadLine());
-						Diak diak3 = new Diak(nev3, osztaly3, azonosito3);
-						Console.WriteLine(diak3.TeljesNevKiiras());
-						break;
-					case 7:
-						Console.Clear();
-						Console.WriteLine("Adja meg az osztály nevét: ");
-						string osztalyNev = Console.ReadLine();
-						Console.WriteLine("Adja meg az osztályfőnök nevét: ");
-						string osztalyfonokNev = Console.ReadLine();
-						
-						Osztaly osztaly = new Osztaly(osztalyNev, new List<Diak>(), osztalyfonokNev);
-						Console.WriteLine(osztaly.OsztalyfonokKiirasa());
-						break;
-					case 8:
-						Console.Clear();
-						Console.WriteLine("Adja meg a diák nevét: ");
-						string nev4 = Console.ReadLine();
-						Console.WriteLine("Adja meg a diák osztályát: ");
-						string osztaly4 = Console.ReadLine();
-						Console.WriteLine("Adja meg a diák azonosítóját: ");
-						int azonosito4 = Convert.ToInt32(Console.ReadLine());
-						Diak diak4 = new Diak(nev4, osztaly4, azonosito4);
-						Console.WriteLine(diak4.TeljesNevKiiras());
-						break;
-					case 9:
-						Console.Clear(); 
-						Console.WriteLine("Kilépés...");
-						fut = false;
-						break;
-					default:
-                        Console.WriteLine("Rossz számot adtál meg, próbáld újra!");
-						break;
-            }
+            Tanar tanarKovacs = new Tanar("Kovács János", new List<Tantargy> { matematika, fizika }, 1);
+            Tanar tanarNagy = new Tanar("Nagy Éva", new List<Tantargy> { magyar }, 2);
+
+            Diak diak1 = new Diak("Kiss Péter", "10.A", 101);
+            Diak diak2 = new Diak("Nagy Anna", "10.A", 102);
+            Diak diak3 = new Diak("Szabó Gábor", "10.A", 103);
+            Diak diak4 = new Diak("Kovács Péter", "10.A", 104);
+            Diak diak5 = new Diak("Kiss Anna", "10.A", 105);
+            Diak diak6 = new Diak("Nagy Gábor", "10.A", 106);
+            Diak diak7 = new Diak("Szabó Anna", "10.A", 107);
+            Diak diak8 = new Diak("Kovács Gábor", "10.A", 108);
+            Diak diak9 = new Diak("Kiss Gábor", "10.A", 109);
+            Diak diak10 = new Diak("Nagy Péter", "10.A", 110);
+
+            Osztaly osztaly10A = new Osztaly("10.A",
+                new List<Diak> { diak1, diak2, diak3, diak4, diak5, diak6, diak7, diak8, diak9, diak10 }, tanarKovacs);
+
+            osztaly10A.HozzaadDiak(diak1);
+            osztaly10A.HozzaadDiak(diak2);
+            osztaly10A.HozzaadDiak(diak3);
+            osztaly10A.HozzaadDiak(diak4);
+            osztaly10A.HozzaadDiak(diak5);
+            osztaly10A.HozzaadDiak(diak6);
+            osztaly10A.HozzaadDiak(diak7);
+            osztaly10A.HozzaadDiak(diak8);
+            osztaly10A.HozzaadDiak(diak9);
+            osztaly10A.HozzaadDiak(diak10);
+
+            Ertekeles ertekeles1 = new Ertekeles(diak1, matematika, 5);
+            Ertekeles ertekeles2 = new Ertekeles(diak2, fizika, 4);
+            Ertekeles ertekeles3 = new Ertekeles(diak3, magyar, 3);
+            Ertekeles ertekeles4 = new Ertekeles(diak4, matematika, 5);
+            Ertekeles ertekeles5 = new Ertekeles(diak5, fizika, 4);
+            Ertekeles ertekeles6 = new Ertekeles(diak6, magyar, 3);
+            Ertekeles ertekeles7 = new Ertekeles(diak7, matematika, 5);
+            Ertekeles ertekeles8 = new Ertekeles(diak8, fizika, 4);
+            Ertekeles ertekeles9 = new Ertekeles(diak9, magyar, 3);
+            Ertekeles ertekeles10 = new Ertekeles(diak10, matematika, 5);
+
+            Console.WriteLine(ertekeles1.JegyKiiras());
+            Console.WriteLine(ertekeles2.JegyKiiras());
+            Console.WriteLine(ertekeles3.JegyKiiras());
+            Console.WriteLine(ertekeles4.JegyKiiras());
+            Console.WriteLine(ertekeles5.JegyKiiras());
+            Console.WriteLine(ertekeles6.JegyKiiras());
+            Console.WriteLine(ertekeles7.JegyKiiras());
+            Console.WriteLine(ertekeles8.JegyKiiras());
+            Console.WriteLine(ertekeles9.JegyKiiras());
+            Console.WriteLine(ertekeles10.JegyKiiras());
+
+            osztaly10A.OsszesDiakListazasa();
+            
+            Console.WriteLine(tanarKovacs.OktatottTantargyak());
+            Console.WriteLine(tanarNagy.OktatottTantargyak());
+
+            Console.WriteLine(osztaly10A.OsztalyfonokKiirasa());
         }
     }
 }

@@ -10,6 +10,10 @@ internal class Tantargy
         Nev = nev;
         KontaktOrak = kontaktorak;
     }
+    public override string ToString()
+    {
+        return Nev;
+    }
 
     public string TantargyAdatok()
     {

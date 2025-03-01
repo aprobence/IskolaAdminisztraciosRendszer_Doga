@@ -12,6 +12,10 @@ internal class Tanar
         Tantargy = new List<Tantargy>();
         TanarID = tanarid;
     }
+    public override string ToString()
+    {
+        return Nev;
+    }
 
     public void HozzaadTantargy(Tantargy tantargy)
     {
@@ -23,7 +27,7 @@ internal class Tanar
         string tantargyak = "";
         foreach (var item in Tantargy)
         {
-            tantargyak += item + " ";
+            item.TantargyAdatok();
         }
         return tantargyak;
     }
